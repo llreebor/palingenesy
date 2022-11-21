@@ -223,10 +223,23 @@ nav {
   -o-transition: 0.3s color;
   transition: 0.3s color;
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .nav__actions a:hover {
   color: #d6da2e;
+}
+
+.nav__actions a:hover path {
+  fill: #d6da2e;
 }
 
 .burger {
@@ -290,7 +303,7 @@ nav {
 
 .section__contacts {
   background: #ea5a37;
-  padding-top: 150px;
+  padding: 150px 0 50px 0;
 }
 
 .contacts {
@@ -932,7 +945,7 @@ nav {
 }
 
 .section__method .method__img-1 {
-  left: 30%;
+  left: 10%;
   top: 2%;
 }
 
@@ -957,7 +970,6 @@ nav {
 }
 
 .method__projects {
-  margin-top: 150px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2289,10 +2301,6 @@ button.swiper-pagination-bullet {
     max-width: 350px;
   }
 
-  .method__projects {
-    margin-top: 100px;
-  }
-
   .section__create .create__img.create__img-2 {
     max-width: 500px;
   }
@@ -2340,11 +2348,11 @@ button.swiper-pagination-bullet {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    margin-right: 110px;
+    margin-right: 50px;
   }
 
   .section__contacts {
-    padding: 100px 0;
+    padding: 100px 0 50px 0;
   }
 
   .contacts {
@@ -2435,7 +2443,6 @@ button.swiper-pagination-bullet {
 
   .method__projects {
     gap: 30px;
-    margin-top: 50px;
   }
 
   .method__item .swiper {
@@ -2637,7 +2644,7 @@ button.swiper-pagination-bullet {
   }
 
   .section__contacts {
-    padding: 70px 0;
+    padding: 70px 0 50px 0;
   }
 
   .contacts {
@@ -2907,7 +2914,7 @@ button.swiper-pagination-bullet {
     margin-right: 30px;
   }
 
-  .nav__actions a {
+  .nav__actions a.phone__link {
     display: none;
   }
 
