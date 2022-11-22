@@ -303,7 +303,7 @@ nav {
 
 .section__contacts {
   background: #ea5a37;
-  padding: 150px 0 50px 0;
+  padding: 120px 0;
 }
 
 .contacts {
@@ -311,6 +311,10 @@ nav {
   display: -ms-flexbox;
   display: flex;
   gap: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 60px;
 }
 
 .contacts__item {
@@ -327,11 +331,11 @@ nav {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
+  text-align: center;
 }
 
 .contacts__img {
-  margin-top: 60px;
-  max-width: 380px;
+  max-width: 350px;
 }
 
 .contacts__form {
@@ -2277,6 +2281,10 @@ button.swiper-pagination-bullet {
     max-width: 1200px;
   }
 
+  .section__contacts {
+    padding: 100px 0 50px 0;
+  }
+
   .step__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 400px;
@@ -2351,16 +2359,8 @@ button.swiper-pagination-bullet {
     margin-right: 50px;
   }
 
-  .section__contacts {
-    padding: 100px 0 50px 0;
-  }
-
   .contacts {
     gap: 15px;
-  }
-
-  .contacts__img {
-    max-width: 300px;
   }
 
   .step {
@@ -2650,6 +2650,7 @@ button.swiper-pagination-bullet {
   .contacts {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-top: 0;
     gap: 50px;
   }
 

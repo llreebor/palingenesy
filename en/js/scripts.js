@@ -50,6 +50,7 @@ function selectLang() {
     const links = document.querySelector('.select__links')
     select.addEventListener('click', (e) => {
         links.classList.toggle('active')
+        document.querySelector('.select__wrapper').classList.toggle('active')
     })
     window.addEventListener('click', (e) => {
         if (e.target.classList.contains('select__wrapper')) {
@@ -291,7 +292,7 @@ if (document.querySelector('#concepts')) {
     gsap.to('.title__img', {
         scrollTrigger: {
             trigger: '.concepts__hero',
-            start: 'bottom bottom', // when the top of the trigger hits the top of the viewport
+            start: '-150px 0px', // when the top of the trigger hits the top of the viewport
             scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
         },
         y: -100,
@@ -307,7 +308,6 @@ if (document.querySelector('#concepts')) {
         y: -30,
     })
 }
-
 // Product
 if (document.querySelector('#product')) {
     const swiper2 = new Swiper('.product__thumbs', {
@@ -327,7 +327,6 @@ if (document.querySelector('#product')) {
         },
     })
 }
-
 // Create
 if (document.querySelector('#create')) {
     const swiper = new Swiper('.swiper', {
@@ -367,6 +366,35 @@ if (document.querySelector('#create')) {
             992: {
                 slidesPerView: 3,
                 spaceBetween: 30,
+            },
+        },
+    })
+}
+
+if (document.querySelector('#method')) {
+    const swiperMethod = new Swiper('.method-slider', {
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        loop: true,
+
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1.2,
+                spaceBetween: 20,
+            },
+            // when window width is >= 480px
+            480: {
+                slidesPerView: 1.3,
+                spaceBetween: 30,
+            },
+            768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
             },
         },
     })

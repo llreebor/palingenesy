@@ -223,10 +223,23 @@ nav {
   -o-transition: 0.3s color;
   transition: 0.3s color;
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .nav__actions a:hover {
   color: #d6da2e;
+}
+
+.nav__actions a:hover path {
+  fill: #d6da2e;
 }
 
 .burger {
@@ -290,7 +303,7 @@ nav {
 
 .section__contacts {
   background: #ea5a37;
-  padding-top: 150px;
+  padding: 120px 0;
 }
 
 .contacts {
@@ -298,6 +311,10 @@ nav {
   display: -ms-flexbox;
   display: flex;
   gap: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 60px;
 }
 
 .contacts__item {
@@ -314,11 +331,11 @@ nav {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
+  text-align: center;
 }
 
 .contacts__img {
-  margin-top: 60px;
-  max-width: 380px;
+  max-width: 350px;
 }
 
 .contacts__form {
@@ -928,31 +945,52 @@ nav {
 .section__method .method__img {
   position: absolute;
   z-index: -1;
+  opacity: 0.5;
 }
 
 .section__method .method__img-1 {
-  left: 30%;
-  top: 110px;
+  left: 10%;
+  top: 2%;
 }
 
 .section__method .method__img-2 {
-  top: 400px;
+  top: 35%;
   right: 120px;
 }
 
 .section__method .method__img-3 {
-  top: 600px;
+  top: 20%;
   left: 0;
 }
 
 .section__method .method__img-4 {
   left: 70px;
-  bottom: 0px;
+  bottom: 35%;
 }
 
 .section__method .method__img-5 {
   right: 0;
-  bottom: 150px;
+  bottom: 5%;
+}
+
+.method__projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 50px;
+}
+
+.method__projects .method__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .method {
@@ -963,18 +1001,50 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.method.method__reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .method__item {
   -webkit-box-flex: 0;
-      -ms-flex: 0 1 565px;
-          flex: 0 1 565px;
+      -ms-flex: 0 1 46%;
+          flex: 0 1 46%;
 }
 
-.method__item img {
+.method__item .swiper {
+  width: 400px;
+  padding-bottom: 50px;
+}
+
+.method__item .swiper .swiper-slide {
+  height: auto;
+}
+
+.method__item .swiper .swiper-slide img {
+  -o-object-fit: cover;
+     object-fit: cover;
   max-width: 100%;
   width: 100%;
-  height: auto;
+  height: 100%;
+}
+
+.method__item .swiper .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #4f4f4a;
+  border-radius: 100%;
+}
+
+.method__item .swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: #d6da2e;
 }
 
 .method__text {
@@ -987,6 +1057,16 @@ nav {
 
 .method__text:not(:first-child) {
   margin-top: 30px;
+}
+
+.method__text a {
+  color: #d6da2e;
+}
+
+.method__text span {
+  color: #ea5a37;
+  font-size: 22px;
+  font-weight: bold;
 }
 
 .method__bg {
@@ -1151,6 +1231,10 @@ nav {
 
 .swiper__projects .swiper-wrapper {
   padding-bottom: 50px;
+}
+
+.swiper__projects .swiper-scrollbar-drag {
+  background: #ea5a37;
 }
 
 .product {
@@ -2197,6 +2281,10 @@ button.swiper-pagination-bullet {
     max-width: 1200px;
   }
 
+  .section__contacts {
+    padding: 100px 0 50px 0;
+  }
+
   .step__item {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 400px;
@@ -2215,12 +2303,10 @@ button.swiper-pagination-bullet {
 
   .section__method .method__img-2 {
     right: -30px;
-    top: 500px;
   }
 
   .section__method .method__img-3 {
     max-width: 350px;
-    top: 550px;
   }
 
   .section__create .create__img.create__img-2 {
@@ -2238,7 +2324,15 @@ button.swiper-pagination-bullet {
 
 @media (max-width: 1200px) {
   .concept__img {
-    max-height: 270px;
+    max-height: 470px;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .method__item img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 
@@ -2262,19 +2356,11 @@ button.swiper-pagination-bullet {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    margin-right: 110px;
-  }
-
-  .section__contacts {
-    padding: 100px 0;
+    margin-right: 50px;
   }
 
   .contacts {
     gap: 15px;
-  }
-
-  .contacts__img {
-    max-width: 300px;
   }
 
   .step {
@@ -2342,10 +2428,6 @@ button.swiper-pagination-bullet {
     left: 2%;
   }
 
-  .section__method .method__img-2 {
-    top: 400px;
-  }
-
   .section__method .method__img-3 {
     max-width: 300px;
     left: -50px;
@@ -2356,8 +2438,15 @@ button.swiper-pagination-bullet {
   }
 
   .section__method .method__img-5 {
-    bottom: 50px;
     max-width: 200px;
+  }
+
+  .method__projects {
+    gap: 30px;
+  }
+
+  .method__item .swiper {
+    width: 350px;
   }
 
   .section__create .create__img.create__img-2 {
@@ -2555,12 +2644,13 @@ button.swiper-pagination-bullet {
   }
 
   .section__contacts {
-    padding: 70px 0;
+    padding: 70px 0 50px 0;
   }
 
   .contacts {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-top: 0;
     gap: 50px;
   }
 
@@ -2687,6 +2777,7 @@ button.swiper-pagination-bullet {
 
   .section__method {
     padding-bottom: 100px;
+    padding-top: 35px;
   }
 
   .section__method .method__img {
@@ -2702,6 +2793,15 @@ button.swiper-pagination-bullet {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 100%;
             flex: 1 1 100%;
+  }
+
+  .method__text:not(:first-child) {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+
+  .method__text span {
+    font-size: 20px;
   }
 
   .method__bg {
@@ -2815,7 +2915,7 @@ button.swiper-pagination-bullet {
     margin-right: 30px;
   }
 
-  .nav__actions a {
+  .nav__actions a.phone__link {
     display: none;
   }
 
@@ -2856,5 +2956,16 @@ button.swiper-pagination-bullet {
         -ms-flex-direction: column;
             flex-direction: column;
     gap: 5px;
+  }
+
+  .method__projects .method__title svg {
+    max-width: 250px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 374.98px) {
+  .method__item .swiper {
+    width: 270px;
   }
 }
